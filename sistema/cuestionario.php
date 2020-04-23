@@ -11,18 +11,28 @@ if (!empty($_POST)) {
   $query_pregunta = mysqli_query($conection, "SELECT cp.pregunta, cp.id_Cuestionario FROM cuestionario_preguntas cp WHERE cp.id_Cuestionario = $idProyecto");
   $result_pregunta = mysqli_num_rows($query_pregunta);
   if ($result_pregunta > 0) {
-    while ($data = mysqli_fetch_array($query_pregunta)) {
+    /*while ($data = mysqli_fetch_array($query_pregunta)) {
       $Pregunta = $data['pregunta'];
+    }*/
+    foreach (mysqli_fetch_array($query_pregunta) as $key['pregunta']) {
+      echo $key;
     }
+  }
+  if ($_POST['checkbox'] != " ") {
+    if (is_array($_POST['checkbox'])) {
+      while (list($key,$value) = each($_POST['checkbox'])) {
+        $sql = mysqli_query($conection, "INSERT INTO cuestionario_diligenciado_respuestas(respuesta, pregunta, idUser) VALUES('$value','$Pregunta', '$iduser')");
+      }
+    }
+  }
 
-  if ($_POST['checkbox'] != "") {
+  /*if ($_POST['checkbox'] != "") {
     if (is_array($_POST['checkbox'])) {
       while (list($key,$value) = each($_POST['checkbox'])) {
         $sql = mysqli_query($conection, "INSERT INTO cuestionario_diligenciado_respuestas(respuesta, id_pregunta, idUser) VALUES('$value','$idPregunta', '$iduser')");
       }
     }
-    }
-  }
+  }*/
 }
 
 $query = mysqli_query($conection, "SELECT c.idCuestionario, c.idProyec FROM cuestionario c WHERE idProyec = $idProyecto");
