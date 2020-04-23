@@ -14,27 +14,15 @@ if (!empty($_POST)) {
     while ($data = mysqli_fetch_array($query_pregunta)) {
       $Pregunta = $data['pregunta'];
     }
-    if (is_array($Pregunta) || is_object($Pregunta)) {
-      foreach ($Pregunta as $key => $value) {
-        echo "Indice:".$key.", ".$value."<br>";
-      }
-    }
-  }
-  /*if ($_POST['checkbox'] != " ") {
-    if (is_array($_POST['checkbox'])) {
-      while (list($key,$value) = each($_POST['checkbox'])) {
-        $sql = mysqli_query($conection, "INSERT INTO cuestionario_diligenciado_respuestas(respuesta, pregunta, idUser) VALUES('$value','$Pregunta', '$iduser')");
-      }
-    }
-  }*/
 
-  /*if ($_POST['checkbox'] != "") {
+  if ($_POST['checkbox'] != "") {
     if (is_array($_POST['checkbox'])) {
       while (list($key,$value) = each($_POST['checkbox'])) {
         $sql = mysqli_query($conection, "INSERT INTO cuestionario_diligenciado_respuestas(respuesta, id_pregunta, idUser) VALUES('$value','$idPregunta', '$iduser')");
       }
     }
-  }*/
+    }
+  }
 }
 
 $query = mysqli_query($conection, "SELECT c.idCuestionario, c.idProyec FROM cuestionario c WHERE idProyec = $idProyecto");
