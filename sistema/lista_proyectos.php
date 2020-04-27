@@ -75,6 +75,8 @@ include "../database.php";
               <a class="link_edit" href="lista_participantes.php?id=<?php echo $data["idProyecto"]; ?>">Participantes</a>
               |
               <a class="link_edit" href="generar_cuestionario.php?id=<?php echo $data["idProyecto"];?>">Generar Cuestionario</a>
+              |
+              <a class="link_edit" href="resultados.php?id=<?php echo $data["idProyecto"];?>">Analisis Cuestionario</a>
             <?php } ?>
             </td>
 					</tr>

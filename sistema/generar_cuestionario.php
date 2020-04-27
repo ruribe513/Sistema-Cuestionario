@@ -41,7 +41,7 @@ $sql6 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestion
 $sql7 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿Me siento comodo con las metas propuestas?','1')");
 $sql8 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿El tiempo para la entrega de metas es suficiente?','1')");
 $sql9 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿Los recursos tecnologicos son los suficientes para el desarrollo del proyecto?','1')");
-$sql10 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿La documentacion en el proyecto es suficiente para el cumplimeinto de las metas?','1')");
+//$sql10 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿La documentacion en el proyecto es suficiente para el cumplimeinto de las metas?','1')");
 $sql11 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿Estas satisfecho con el rol que tienes dentro del grupo?','1')");
 
 $query4 = mysqli_query($conection, "SELECT u.idUsuario, u.proyecto_id FROM users u");
