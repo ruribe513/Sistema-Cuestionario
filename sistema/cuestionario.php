@@ -2,7 +2,10 @@
 session_start();
 include "../database.php";
 
+$iduser = $_SESSION['idUser'];
 $idProyecto = $_GET["proyectoid"];
+
+
 
 $query = mysqli_query($conection, "SELECT c.idCuestionario, c.idProyec FROM cuestionario c WHERE idProyec = $idProyecto");
 while ($data = mysqli_fetch_array($query)) {
@@ -10,6 +13,7 @@ while ($data = mysqli_fetch_array($query)) {
   $idProyec = $data['idProyec'];
 }
 
+$sql_update = mysqli_query($conection, "UPDATE cuestionario_diligenciado SET estado = 'S' WHERE id_Usuario = $iduser");
 
  ?>
 

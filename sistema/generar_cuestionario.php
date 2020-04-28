@@ -34,7 +34,7 @@ while ($data = mysqli_fetch_array($query3)){
 
 $sql = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿Consideras que el numero de personas es suficiente para el desarrollo del proyecto?','1')");
 $sql2 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿Consideras que el numero de tecnologias implementadas es suficiente?','1')");
-$sql3 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿El numero de metas estipulado es demasido?','1')");
+$sql3 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿La cantidad de metas estipuladas es la idónea?','1')");
 $sql4 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿La comunicacion con el gerente del proyecto es asertiva?','1')");
 $sql5 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿El trabajo realizado es bien remunerado?','1')");
 $sql6 = mysqli_query($conection, "INSERT INTO cuestionario_preguntas(id_Cuestionario,pregunta,tipo_respuesta) VALUES('$idCuestionario','¿El trabajo realizado es elogiado por las demas personas del equipo?','1')");
@@ -49,7 +49,7 @@ while ($data = mysqli_fetch_array($query4)) {
   $idUsuario = $data['idUsuario'];
   $idProyec = $data['proyecto_id'];
   if ($idProyec == $idproyect) {
-    $query4_insert = mysqli_query($conection, "INSERT INTO cuestionario_diligenciado(id_Usuario, id_Cuestionario,estado) VALUES('$idUsuario','$idCuestionario','N')");
+    $query4_insert = mysqli_query($conection, "INSERT INTO cuestionario_diligenciado(id_Usuario, id_Cuestionario,id_Proyecto,estado) VALUES('$idUsuario','$idCuestionario','$idProyec','N')");
   }
 }
 
